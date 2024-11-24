@@ -1,0 +1,580 @@
+@charset "utf-8";
+
+.hide_pc {
+    display: block
+}
+
+.hide_sp {
+    display: none
+}
+
+#wrap_gnav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 13, 9, .96);
+    z-index: 1100
+}
+
+#wrap_gnav nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -168px;
+    width: 100%;
+    height: 336px
+}
+
+#wrap_gnav nav ul {
+    overflow: hidden
+}
+
+#wrap_gnav nav ul li {
+    width: 100%;
+    height: 48px
+}
+
+#wrap_gnav nav ul li a {
+    display: block;
+    font-family: 'Didot LT W01 Roman';
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    line-height: 48px
+}
+
+body.scroll #btn_gnav {
+    height: 64px
+}
+
+#btn_gnav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 96px;
+    text-decoration: none;
+    text-indent: -9999px;
+    cursor: pointer;
+    transition: all .2s ease;
+    z-index: 1200
+}
+
+#btn_gnav span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -9px;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: all .2s ease
+}
+
+#btn_gnav span:before, #btn_gnav span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    transition: all .2s ease
+}
+
+#btn_gnav span:before {
+    top: -6px
+}
+
+#btn_gnav span:after {
+    top: 6px
+}
+
+#btn_gnav.active span {
+    background-color: transparent
+}
+
+#btn_gnav.active span:before {
+    top: 0;
+    transform: rotate(45deg)
+}
+
+#btn_gnav.active span:after {
+    top: 0;
+    transform: rotate(-45deg)
+}
+
+#btn_gnav.black span, #btn_gnav.black span:before, #btn_gnav.black span:after {
+    background: rgba(20, 13, 9, .8)
+}
+
+#btn_gnav.black.active span:before, #btn_gnav.black.active span:after {
+    background: #fff
+}
+
+.header {
+    height: 96px
+}
+
+.header h1 {
+    top: 0;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px
+}
+
+.header h1 a {
+    display: block;
+    width: 180px;
+    height: 100%;
+    background-size: 65px auto;
+}
+
+.header nav, .header .list_blank {
+    display: none
+}
+
+.header .btn_close {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    margin: -6px -6px 0 0;
+    width: 12px;
+    height: 12px
+}
+
+.header.scroll {
+    height: 64px
+}
+
+.sec .ttl {
+    font-size: 3.6rem
+}
+
+.sec .btn_scroll {
+    bottom: -36px;
+    width: 60%;
+    height: 36px;
+    font-size: 1.2rem;
+    line-height: 36px
+}
+
+.sec .btn_scroll:before {
+    width: 18px;
+    height: 18px
+}
+
+.sec_home .copy {
+    margin: -64px 0 0 0;
+    font-size: 4.2rem
+}
+
+.sec_home .shortcut {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    margin: 54px 0 0;
+    width: 60%;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease 1s;
+    transform: scale(.96);
+    z-index: 100
+}
+
+.sec_home .shortcut li {
+    float: left;
+    width: 50%
+}
+
+.sec_home .shortcut li a {
+    display: block;
+    border: 1px solid #fff;
+    font-family: 'Futura PT W01 Demi';
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    line-height: 48px
+}
+
+.sec_home .shortcut li:first-child a {
+    border-right: 0
+}
+
+.sec_home .btn_scroll {
+    right: 20%
+}
+
+.sec_home .btn_scroll:before {
+    right: 24px;
+    margin: -9px -9px 0 0
+}
+
+.sec_home .wrap_bg .bg01 {
+    background: url("../img/kv_bg01_sp.jpg");
+    background-size: cover
+}
+
+.sec_home .wrap_bg .bg02 {
+    background: url("../img/kv_bg02_sp.jpg");
+    background-size: cover
+}
+
+.sec_home .wrap_bg .bg03 {
+    background: url("../img/kv_bg03_sp.jpg");
+    background-size: cover
+}
+
+.sec_home.active .shortcut {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.sec_concept .left, .sec_concept .right {
+    float: none;
+    width: 100%;
+    height: auto;
+    overflow: hidden
+}
+
+.sec_concept .left {
+    background: 0;
+    opacity: 1;
+    transition: none
+}
+
+.sec_concept .left img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: all 3s ease .5s
+}
+
+.sec_concept .right .wrap_cont {
+    position: static;
+    margin-top: 0
+}
+
+.sec_concept .right .ttl {
+    margin: 64px auto 36px;
+    width: 240px;
+    background: url("../img/bd01.png") bottom no-repeat;
+    background-size: 240px auto
+}
+
+.sec_concept .right p {
+    margin-bottom: 48px;
+    font-size: 1.2rem;
+    line-height: 2.2
+}
+
+.sec_concept .btn_scroll {
+    left: 20%
+}
+
+.sec_concept .btn_scroll:before {
+    left: 24px;
+    margin: -9px 0 0 -9px
+}
+
+.sec_concept.active .left img {
+    opacity: 1
+}
+
+.sec_menu {
+    height: 100%
+}
+
+.sec_menu .top {
+    height: 40%
+}
+
+.sec_menu .top .ttl {
+    left: 50%;
+    margin: -52px 0 0 -120px;
+    width: 240px;
+    background: url("../img/bd02.png") bottom no-repeat;
+    background-size: 240px auto;
+    text-align: center
+}
+
+.sec_menu .top .btn_dl, .sec_menu .top .btn_dl:hover {
+    right: 50%;
+    margin: 28px -90px 0 0;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    top: 45%
+}
+
+.sec_menu .bottom {
+    height: 60%
+}
+
+.sec_menu .bottom ul li {
+    width: 50%;
+    height: 50%
+}
+
+.sec_menu .bottom ul li .tab_nav .sttl {
+    top: 24px;
+    font-size: 1.5rem
+}
+
+.sec_menu .bottom ul .menu01 .tab_nav .bg {
+    background: url("../img/menu_bg01_sp.jpg");
+    background-size: cover
+}
+
+.sec_menu .bottom ul .menu02 .tab_nav .bg {
+    background: url("../img/menu_bg02_sp.jpg");
+    background-size: cover
+}
+
+.sec_menu .bottom ul .menu03 .tab_nav .bg {
+    background: url("../img/menu_bg03_sp.jpg");
+    background-size: cover
+}
+
+.sec_menu .bottom ul .menu04 .tab_nav .bg {
+    background: url("../img/menu_bg04_sp.jpg");
+    background-size: cover
+}
+
+.sec_menulist {
+    position: static;
+    height: auto !important;
+    overflow: visible
+}
+
+.sec_menulist .top {
+    height: 64px;
+    background: url("../img/nav_bg.jpg");
+    background-size: cover;
+    overflow: hidden
+}
+
+.sec_menulist .top ul {
+    margin-left: 20%;
+    height: 64px;
+    background: 0;
+    overflow: hidden
+}
+
+.sec_menulist .top ul li .tab_nav {
+    font-size: 1.2rem;
+    letter-spacing: -.06em
+}
+
+.sec_menulist .top ul li .tab_nav .wrap_txt {
+    margin-top: -6px
+}
+
+.sec_menulist .top ul li .tab_nav .wrap_txt p {
+    border-width: 1px
+}
+
+.sec_menulist .top ul li .tab_nav .wrap_txt p span {
+    display: none
+}
+
+.sec_menulist .bottom {
+    height: auto;
+    overflow: hidden
+}
+
+.sec_menulist .bottom .tab_cont {
+    overflow: hidden
+}
+
+.sec_menulist .bottom .tab_cont ul {
+    position: static;
+    margin: 24px 12px 24px;
+    width: auto;
+    height: auto;
+    overflow: visible
+}
+
+.sec_menulist .bottom .tab_cont ul li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 6px;
+    box-sizing: border-box;
+    width: 50%
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_thumb, .sec_menulist .bottom .tab_cont ul li .wrap_name, .sec_menulist .bottom .tab_cont ul li .wrap_price {
+    display: block
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_thumb {
+    margin-bottom: 18px;
+    width: auto
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_name {
+    padding-left: 0
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_name h3 {
+    margin-bottom: 12px;
+    font-size: 1.8rem
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_name h3 .small {
+    display: block
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_name .jp {
+    font-size: 1.2rem
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_name .excerpt {
+    margin-bottom: 12px;
+    font-size: 1rem
+}
+
+.sec_menulist .bottom .tab_cont ul li .wrap_price {
+    margin-bottom: 48px;
+    width: auto;
+    font-size: 1.8rem;
+    text-align: left
+}
+
+.sec_menulist .bottom .tab_cont .time {
+    position: static;
+    margin: 48px 0;
+    width: 100%;
+    line-height: 1;
+    transform: rotate(0)
+}
+
+.sec_menulist .bottom .tab_cont .caution {
+    position: static;
+    margin: 0;
+    padding-bottom: 84px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 1;
+    writing-mode: horizontal-tb;
+    clear: both
+}
+
+.sec_menulist .btn_scroll {
+    left: 20%
+}
+
+.sec_menulist .btn_scroll:before {
+    left: 24px;
+    margin: -9px 0 0 -9px
+}
+
+.sec_menu.active+.sec_menulist .top ul li {
+    opacity: 0
+}
+
+.sec_menulist.active .top ul li {
+    opacity: 1
+}
+
+.sec_shopinfo {
+    background: #140d09
+}
+
+.sec_shopinfo .cont {
+    top: 50%;
+    left: 5%;
+    margin: -210px 0 0 0;
+    width: 90%;
+    height: 420px
+}
+
+.sec_shopinfo .cont .wrap_logo {
+    margin: 24px auto 42px;
+    width: 220px
+}
+
+.sec_shopinfo .cont .wrap_txt {
+    font-size: 1.3rem;
+    letter-spacing: -.02em
+}
+
+.sec_shopinfo .wrap_bg {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 3s ease .5s
+}
+
+.sec_shopinfo .wrap_bg .slick-list, .sec_shopinfo .wrap_bg .slick-track {
+    height: 100%
+}
+
+.sec_shopinfo .wrap_bg .bg {
+    height: 100%
+}
+
+.sec_shopinfo .wrap_bg .bg01 {
+    background: url("../img/shopinfo_bg01_sp.jpg");
+    background-size: cover
+}
+
+.sec_shopinfo .wrap_bg .bg02 {
+    background: url("../img/shopinfo_bg02_sp.jpg");
+    background-size: cover
+}
+
+.sec_shopinfo .wrap_bg .bg03 {
+    background: url("../img/shopinfo_bg03_sp.jpg");
+    background-size: cover
+}
+
+.sec_shopinfo .btn_scroll {
+    margin-left: 0;
+    left: 20%
+}
+
+.sec_shopinfo .btn_scroll:before {
+    left: 24px;
+    margin: -9px 0 0 -9px
+}
+
+.sec_footer .top {
+    height: 50%
+}
+
+.sec_footer .bottom {
+    height: 50%
+}
+
+.sec_footer .bottom .wrap_logo .cont .logo {
+    width: 144px
+}
+
+.sec_footer .bottom .wrap_txt .cont ul {
+    margin: 0 24px 4px;
+    font-size: 1.3rem
+}
+
+.sec_footer .bottom .wrap_txt .cont .small {
+    font-size: 1rem
+}
+
+.sec_footer .bottom .wrap_txt .cont .logo_cs {
+    margin: 0 auto 4px;
+    width: 54px
+}
+
+.sec_footer.active .top, .sec_footer.active .bottom {
+    opacity: 1
+}
