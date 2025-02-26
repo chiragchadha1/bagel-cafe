@@ -1,11 +1,32 @@
 @charset "utf-8";
 
+/* Base styles (desktop-first) */
+.hide_pc {
+    display: none;
+}
+
+.hide_sp {
+    display: block;
+}
+
+/* Only include desktop media query since mobile is handled in sp.min.css */
+@media screen and (min-width: 768px) {
+    .hide_pc {
+        display: block;
+    }
+
+    .hide_sp {
+        display: none;
+    }
+}
+
+/* Rest of the desktop styles */
 html, body {
     height: 100%;
     font-family: 'Yu Gothic Std-TT M', "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
     font-feature-settings: "palt";
     color: #140d09;
-    line-height: 1.8
+    line-height: 1.8;
 }
 
 html {
@@ -23,17 +44,12 @@ a {
     cursor: pointer
 }
 
-.hide_pc {
-    display: none
-}
-
-.hide_sp {
-    display: block
-}
-
 .header, .sec {
     opacity: 1;
-    transition: opacity 0.2s ease;
+    visibility: visible;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out, backdrop-filter 0.3s ease-out, height 0.3s ease-out
 }
 
 #wrap_gnav {
@@ -94,13 +110,17 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 15%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
+    height: 10%;
+    z-index: 999;
     transform: translateY(0);
-    will-change: transform;
-    transition: transform 0.3s ease-out, background-color 0.3s ease-out, backdrop-filter 0.3s ease-out, height 0.3s ease-out;
+    background: rgba(20, 13, 9, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.3s ease-out,
+        backdrop-filter 0.3s ease-out,
+        height 0.3s ease-out;
+    will-change: transform, background-color, backdrop-filter, height
 }
 
 .header a {
@@ -240,13 +260,19 @@ a {
 }
 
 #btn_gnav {
-    display: none
+    display: none;
 }
 
 .header.scroll {
     height: 10%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateY(0)
+}
+
+.header.scroll.hide {
+    transform: translateY(-100%)
 }
 
 .header.scroll .btn_close {
@@ -260,7 +286,13 @@ a {
 
 .sec {
     position: relative;
-    overflow: hidden
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease
 }
 
 .sec .ttl {
@@ -310,6 +342,7 @@ a {
 }
 
 .sec_home {
+    margin-top: -15vh;
     background: #140d09
 }
 
@@ -473,7 +506,8 @@ a {
 .sec_concept .right p {
     color: #564940;
     text-align: center;
-    line-height: 2.7
+    line-height: 2.7;
+    padding: 2rem;
 }
 
 .sec_concept .btn_scroll {
@@ -876,10 +910,10 @@ a {
     left: 0;
     margin-top: -10px;
     width: 100%;
-    line-height: 1
 }
 
 .sec_menulist .top ul li .tab_nav .wrap_txt p {
+    padding: 2rem;
     display: inline-block;
     border-bottom: 2px solid #564940;
     -webkit-transition: all .2s ease;
@@ -908,11 +942,21 @@ a {
 }
 
 .sec_menulist .bottom .tab_cont {
-    display: none
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    height: auto
 }
 
 .sec_menulist .bottom .breakfast {
     display: block
+}
+
+.sec_menulist .bottom .tab_cont ul,
+.sec_menulist .bottom .tab_cont .time,
+.sec_menulist .bottom .tab_cont .caution {
+    opacity: 1;
+    visibility: visible;
 }
 
 .sec_menulist .bottom .tab_cont ul {
@@ -920,7 +964,6 @@ a {
     top: 50%;
     left: 12.5%;
     width: 75%;
-    opacity: 0;
     -webkit-transition: all 1s ease 1s;
     -moz-transition: all 1s ease 1s;
     -ms-transition: all 1s ease 1s;
@@ -990,7 +1033,6 @@ a {
 }
 
 .sec_menulist .bottom .tab_cont .time, .sec_menulist .bottom .tab_cont .caution {
-    opacity: 0;
     -webkit-transition: all .7s ease 1.7s;
     -moz-transition: all .7s ease 1.7s;
     -ms-transition: all .7s ease 1.7s;
@@ -1169,12 +1211,16 @@ a {
 }
 
 .sec_footer {
-    background: #564940
+    height: auto;
+    background: #140d09;
+    opacity: 1;
+    visibility: visible;
 }
 
-.sec_footer .top, .sec_footer .bottom {
-    opacity: 0;
-    transition: all 0.3s ease;
+.sec_footer .top,
+.sec_footer .bottom {
+    opacity: 1;
+    visibility: visible;
 }
 
 .sec_footer .top {
@@ -1275,10 +1321,6 @@ a {
     height: auto
 }
 
-.sec_footer.active .top, .sec_footer.active .bottom {
-    opacity: 1
-}
-
 .floating-order-button {
     position: fixed;
     bottom: 20px;
@@ -1316,4 +1358,18 @@ a {
     transform: translateX(-50%);
     text-align: center;
     z-index: 999;
+}
+
+#map {
+    height: 650px;
+}
+
+/* Modify animation classes to only affect transitions, not visibility */
+.sec.active .copy,
+.sec.active .wrap_bg,
+.sec.active .left,
+.sec.active .right .wrap_cont,
+.sec.active .btn_scroll {
+    transform: none;
+    opacity: 1;
 }

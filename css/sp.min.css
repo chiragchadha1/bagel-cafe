@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* Mobile-specific overrides */
 .hide_pc {
     display: block
 }
@@ -8,6 +9,7 @@
     display: none
 }
 
+/* Mobile navigation styles */
 #wrap_gnav {
     display: none;
     position: fixed;
@@ -17,6 +19,10 @@
     height: 100%;
     background: rgba(20, 13, 9, .96);
     z-index: 1100
+}
+
+#wrap_gnav.active {
+    display: block;
 }
 
 #wrap_gnav nav {
@@ -47,10 +53,31 @@
     line-height: 48px
 }
 
-body.scroll #btn_gnav {
-    height: 64px
+/* Mobile header styles */
+.header {
+    height: 96px;
+    background: rgba(20, 13, 9, .95);
 }
 
+.header h1 {
+    top: 0;
+    left: 50%;
+    margin-left: -80px;
+    width: 160px
+}
+
+.header h1 a {
+    display: block;
+    width: 180px;
+    height: 100%;
+    background-size: 65px auto;
+}
+
+.header nav, .header .list_blank {
+    display: none
+}
+
+/* Mobile menu button */
 #btn_gnav {
     display: block;
     position: fixed;
@@ -117,28 +144,6 @@ body.scroll #btn_gnav {
     background: #fff
 }
 
-.header {
-    height: 96px
-}
-
-.header h1 {
-    top: 0;
-    left: 50%;
-    margin-left: -80px;
-    width: 160px
-}
-
-.header h1 a {
-    display: block;
-    width: 180px;
-    height: 100%;
-    background-size: 65px auto;
-}
-
-.header nav, .header .list_blank {
-    display: none
-}
-
 .header .btn_close {
     display: block;
     position: absolute;
@@ -153,177 +158,38 @@ body.scroll #btn_gnav {
     height: 64px
 }
 
+/* Mobile section styles */
+.sec {
+    height: auto !important;
+    min-height: 100vh !important;
+    background: transparent !important;
+}
+
 .sec .ttl {
-    font-size: 3.6rem
+    font-size: 3.6rem;
+    color: #fff;
 }
 
-.sec .btn_scroll {
-    bottom: -36px;
-    width: 60%;
-    height: 36px;
-    font-size: 1.2rem;
-    line-height: 36px
-}
-
-.sec .btn_scroll:before {
-    width: 18px;
-    height: 18px
+.sec_home {
+    margin-top: 0 !important;
+    padding-top: 60px !important;
+    background: transparent !important;
 }
 
 .sec_home .copy {
     margin: -64px 0 0 0;
-    font-size: 4.2rem
-}
-
-.sec_home .shortcut {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    margin: 54px 0 0;
-    width: 60%;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 1s ease 1s;
-    transform: scale(.96);
-    z-index: 100
-}
-
-.sec_home .shortcut li {
-    float: left;
-    width: 50%
-}
-
-.sec_home .shortcut li a {
-    display: block;
-    border: 1px solid #fff;
-    font-family: 'Futura PT W01 Demi';
-    font-size: 1.2rem;
+    font-size: 4.2rem;
     color: #fff;
-    text-align: center;
-    text-decoration: none;
-    line-height: 48px
 }
 
-.sec_home .shortcut li:first-child a {
-    border-right: 0
-}
-
-.sec_home .btn_scroll {
-    right: 20%
-}
-
-.sec_home .btn_scroll:before {
-    right: 24px;
-    margin: -9px -9px 0 0
-}
-
-.sec_home .wrap_bg .bg01 {
-    background: url("../img/kv_bg01.jpg") center center no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.sec_home .wrap_bg .bg02 {
-    background: url("../img/kv_bg02.jpg") center center no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.sec_home .wrap_bg .bg03 {
-    background: url("../img/kv_bg03.jpg") center center no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-@media(-webkit-min-device-pixel-ratio:2) {
-    .sec_home .wrap_bg .bg01 {
-        background-image: url("../img/kv_bg01@2x.jpg");
-    }
-
-    .sec_home .wrap_bg .bg02 {
-        background-image: url("../img/kv_bg02@2x.jpg");
-    }
-
-    .sec_home .wrap_bg .bg03 {
-        background-image: url("../img/kv_bg03@2x.jpg");
-    }
-}
-
-.sec_home.active .shortcut {
-    opacity: 1;
-    transform: scale(1)
-}
-
-.sec_concept .left, .sec_concept .right {
-    float: none;
-    width: 100%;
-    height: auto;
-    overflow: hidden
-}
-
-.sec_concept .left {
-    background: 0;
-    opacity: 1;
-    transition: none
-}
-
-.sec_concept .left img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: all 3s ease .5s
-}
-
-.sec_concept .right .wrap_cont {
-    position: static;
-    margin-top: 0
-}
-
-.sec_concept .right .ttl {
-    margin: 64px auto 36px;
-    width: 240px;
-    background: url("../img/bd01.png") bottom no-repeat;
-    background-size: 240px auto
-}
-
-.sec_concept .right p {
-    margin-bottom: 48px;
-    font-size: 1.2rem;
-    line-height: 2.2
-}
-
-.sec_concept .btn_scroll {
-    left: 20%
-}
-
-.sec_concept .btn_scroll:before {
-    left: 24px;
-    margin: -9px 0 0 -9px
-}
-
-.sec_concept.active .left img {
-    opacity: 1
-}
-
+/* Mobile menu section */
 .sec_menu {
-    height: 100%
+    background: transparent !important;
 }
 
 .sec_menu .top {
-    height: 40%
+    height: 40%;
+    background: transparent !important;
 }
 
 .sec_menu .top .ttl {
@@ -332,7 +198,8 @@ body.scroll #btn_gnav {
     width: 240px;
     background: url("../img/bd02.png") bottom no-repeat;
     background-size: 240px auto;
-    text-align: center
+    text-align: center;
+    color: #fff;
 }
 
 .sec_menu .top .btn_dl, .sec_menu .top .btn_dl:hover {
@@ -341,21 +208,25 @@ body.scroll #btn_gnav {
     width: 180px;
     height: 40px;
     line-height: 40px;
-    top: 45%
+    top: 45%;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .sec_menu .bottom {
-    height: 60%
+    height: 60%;
+    background: transparent !important;
 }
 
 .sec_menu .bottom ul li {
     width: 50%;
-    height: 50%
+    height: 50%;
+    background: transparent !important;
 }
 
 .sec_menu .bottom ul li .tab_nav .sttl {
     top: 24px;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 .sec_menu .bottom ul .menu01 .tab_nav .bg {
@@ -439,12 +310,13 @@ body.scroll #btn_gnav {
 .sec_menulist {
     position: static;
     height: auto !important;
-    overflow: visible
+    overflow: visible;
+    background: transparent !important;
 }
 
 .sec_menulist .top {
     height: 64px;
-    background: url("../img/nav_bg.jpg");
+    background: rgba(20, 13, 9, 0.7);
     background-size: cover;
     overflow: hidden
 }
@@ -475,11 +347,15 @@ body.scroll #btn_gnav {
 
 .sec_menulist .bottom {
     height: auto;
-    overflow: hidden
+    overflow: hidden;
+    background: transparent !important;
 }
 
 .sec_menulist .bottom .tab_cont {
-    overflow: hidden
+    overflow: hidden;
+    background: rgba(20, 13, 9, 0.7);
+    padding: 20px;
+    border-radius: 4px;
 }
 
 .sec_menulist .bottom .tab_cont ul {
@@ -574,11 +450,18 @@ body.scroll #btn_gnav {
     opacity: 1
 }
 
+.sec_menulist .top ul li {
+    width: 50% !important
+}
+
 .sec_shopinfo {
-    background: #140d09
+    background: transparent !important;
 }
 
 .sec_shopinfo .cont {
+    background: rgba(20, 13, 9, 0.7);
+    padding: 20px;
+    border-radius: 4px;
     top: 50%;
     left: 5%;
     margin: -210px 0 0 0;
@@ -599,7 +482,7 @@ body.scroll #btn_gnav {
 .sec_shopinfo .wrap_bg {
     width: 100%;
     height: 100%;
-    opacity: 0;
+    opacity: 1 !important;
     transition: all 3s ease .5s
 }
 
@@ -633,11 +516,17 @@ body.scroll #btn_gnav {
     margin: -9px 0 0 -9px
 }
 
+.sec_footer {
+    background: transparent !important;
+}
+
 .sec_footer .top {
+    background: rgba(20, 13, 9, 0.7);
     height: 50%
 }
 
 .sec_footer .bottom {
+    background: rgba(20, 13, 9, 0.7);
     height: 50%
 }
 
