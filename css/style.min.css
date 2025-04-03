@@ -803,7 +803,7 @@ a {
 
 @media(-webkit-min-device-pixel-ratio:2) {
     .sec_menulist .top ul {
-        background: url("../img/nav_bg%402x.jpg");
+        background: url("../img/nav_bg.jpg");
         -webkit-background-size: cover;
         background-size: cover
     }
