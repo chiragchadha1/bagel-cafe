@@ -413,19 +413,19 @@ a {
 
 @media(-webkit-min-device-pixel-ratio:2) {
     .sec_home .wrap_bg .bg01 {
-        background: url("../img/kv_bg01%402x.jpg");
+        background: url("../img/kv_bg01.jpg");
         -webkit-background-size: cover;
         background-size: cover
     }
 
     .sec_home .wrap_bg .bg02 {
-        background: url("../img/kv_bg02%402x.jpg");
+        background: url("../img/kv_bg02.jpg");
         -webkit-background-size: cover;
         background-size: cover
     }
 
     .sec_home .wrap_bg .bg03 {
-        background: url("../img/kv_bg03%402x.jpg");
+        background: url("../img/kv_bg03.jpg");
         -webkit-background-size: cover;
         background-size: cover
     }
@@ -465,7 +465,7 @@ a {
 
 @media(-webkit-min-device-pixel-ratio:2) {
     .sec_concept .left {
-        background: url("../img/concept_bg%402x.jpg");
+        background: url("../img/concept_bg.jpg");
         -webkit-background-size: cover;
         background-size: cover
     }
@@ -689,22 +689,6 @@ a {
     transition: all 1s ease 1.1s
 }
 
-.sec_menu .bottom ul .menu03 {
-    -webkit-transition: all 1s ease 1.2s;
-    -moz-transition: all 1s ease 1.2s;
-    -ms-transition: all 1s ease 1.2s;
-    -o-transition: all 1s ease 1.2s;
-    transition: all 1s ease 1.2s
-}
-
-.sec_menu .bottom ul .menu04 {
-    -webkit-transition: all 1s ease 1.3s;
-    -moz-transition: all 1s ease 1.3s;
-    -ms-transition: all 1s ease 1.3s;
-    -o-transition: all 1s ease 1.3s;
-    transition: all 1s ease 1.3s
-}
-
 .sec_menu .bottom ul li .tab_nav {
     display: block;
     position: relative;
@@ -748,17 +732,6 @@ a {
     background-size: cover
 }
 
-.sec_menu .bottom ul .menu03 .tab_nav .bg {
-    background: url("../img/menu_bg03.jpg");
-    -webkit-background-size: cover;
-    background-size: cover
-}
-
-.sec_menu .bottom ul .menu04 .tab_nav .bg {
-    background: url("../img/menu_bg04.jpg");
-    -webkit-background-size: cover;
-    background-size: cover
-}
 
 @media(-webkit-min-device-pixel-ratio:2) {
     .sec_menu .bottom ul .menu01 .tab_nav .bg {
@@ -773,17 +746,6 @@ a {
         background-size: cover
     }
 
-    .sec_menu .bottom ul .menu03 .tab_nav .bg {
-        background: url("../img/menu_bg03%402x.jpg");
-        -webkit-background-size: cover;
-        background-size: cover
-    }
-
-    .sec_menu .bottom ul .menu04 .tab_nav .bg {
-        background: url("../img/menu_bg04%402x.jpg");
-        -webkit-background-size: cover;
-        background-size: cover
-    }
 }
 
 .sec_menu .bottom ul li .tab_nav .sttl {
